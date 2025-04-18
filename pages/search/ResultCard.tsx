@@ -1,3 +1,5 @@
+// This component displays individual search results in a card layout, highlighting matched terms and providing a link to the corresponding documentation.
+
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -13,6 +15,7 @@ import {
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { SearchResult } from './SearchResults';
 
+// State class that encapsulates the details of a search result, including the title, URL, snippets, and search term to highlight.
 export class ResultCardState {
     title: string;
     url: string;
@@ -26,9 +29,8 @@ export class ResultCardState {
         this.textToHighlight = textToHighlight;
     }
 
-    // Method to extract folder name from the URL
+    // Extracts the folder name from the URL (if present)
     getFolderName() {
-        // Assuming the folder is part of the URL path (e.g., /folder/tutorial-page)
         const urlParts = this.url.split('/');
         return urlParts.length > 1 ? urlParts[urlParts.length - 2] : '';
     }
@@ -38,6 +40,7 @@ interface ResultCardProps {
     state: ResultCardState;
 }
 
+// The main ResultCard component
 const ResultCard: React.FC<ResultCardProps> = ({ state }) => {
     const folderName = state.getFolderName();
 
@@ -95,6 +98,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ state }) => {
 
 export default ResultCard;
 
+// Helper function to highlight the search terms in the text snippets.
 function highlightSearchTerm(text: string, textToHighlight: string): string {
     if (!text || !textToHighlight) return text;
 

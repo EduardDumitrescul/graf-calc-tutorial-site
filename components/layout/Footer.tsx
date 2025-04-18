@@ -1,3 +1,7 @@
+/**
+ * A footer component displaying copyright and credits information.
+ */
+
 import { alpha, Box, Container, Typography, Link } from '@mui/material';
 
 export default function Footer() {

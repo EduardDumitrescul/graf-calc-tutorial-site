@@ -1,3 +1,9 @@
+/**
+ * Provides theme context and theme switching functionality to the app.
+ * It maintains the current theme (light or dark) and allows toggling between them.
+ * The theme preference is stored in localStorage and persists across sessions.
+ */
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { ThemeProvider as MUIThemeProvider, createTheme, PaletteMode } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';

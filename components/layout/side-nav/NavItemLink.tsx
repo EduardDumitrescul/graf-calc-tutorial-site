@@ -1,3 +1,8 @@
+/**
+ * A navigation link item that highlights the active link based on the current route.
+ * It navigates to the specified path when clicked.
+ */
+
 import { ListItemButton, ListItemText } from '@mui/material';
 import { useRouter } from 'next/router';
 

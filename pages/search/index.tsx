@@ -1,3 +1,6 @@
+// This page handles search functionality, including rendering the search form and displaying search results.
+// It uses Next.js's `getServerSideProps` for fetching search results on the server-side based on the query parameter.
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Typography } from "@mui/material";
@@ -5,13 +8,15 @@ import Layout from '../../components/layout/Layout';
 import { getNavigation } from '../../lib/navigation';
 import SearchResults, { SearchResult } from './SearchResults';
 import SearchForm from "./SearchForm";
+
 export default function SearchPage({ navigation, initialResults = [], initialQuery = '' }) {
     const router = useRouter();
-    const [searchTerm, setSearchTerm] = useState<string>(initialQuery);
-    const [results, setResults] = useState<SearchResult[]>(initialResults);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    const [searchTerm, setSearchTerm] = useState<string>(initialQuery); // Track search term input
+    const [results, setResults] = useState<SearchResult[]>(initialResults); // Store search results
+    const [loading, setLoading] = useState(false); // Track loading state
+    const [error, setError] = useState<string | null>(null); // Track error state
 
+    // Trigger search when query parameter changes
     useEffect(() => {
         if (router.query.q) {
             const query = router.query.q as string;
@@ -20,6 +25,7 @@ export default function SearchPage({ navigation, initialResults = [], initialQue
         }
     }, [router.query.q]);
 
+    // Perform search by querying the API
     const performSearch = async (query: string) => {
         if (!query) return;
 
@@ -63,6 +69,7 @@ export default function SearchPage({ navigation, initialResults = [], initialQue
     );
 }
 
+// Fetch initial search results on the server side, if a query exists
 export async function getServerSideProps({ query }) {
     const q = query.q || '';
     let initialResults = [];

@@ -1,6 +1,11 @@
-import {IconButton, Tooltip} from "@mui/material";
-import React, {useEffect} from "react";
-import {Brightness4, Brightness7} from "@mui/icons-material";
+/**
+ * A toggle button that switches between light and dark themes.
+ * Syncs the selected theme with DOM attributes for styling compatibility.
+ */
+
+import { IconButton, Tooltip } from "@mui/material";
+import React, { useEffect } from "react";
+import { Brightness4, Brightness7 } from "@mui/icons-material";
 import { useTheme } from "../ThemeContext";
 
 export const ThemeToggleButton = () => {

@@ -1,3 +1,8 @@
+/**
+ * A full-page layout component with a header, main content area, and footer.
+ * Handles search functionality and dynamically updates the page title/meta description.
+ */
+
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { Box } from '@mui/material';

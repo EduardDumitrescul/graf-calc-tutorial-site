@@ -1,3 +1,8 @@
+/**
+ * A navigation component that displays a collapsible list of tutorial sections.
+ * The list dynamically updates based on the current route and expanded folder state.
+ */
+
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Typography } from '@mui/material';

@@ -1,5 +1,16 @@
-// pages/tutorial/index.tsx
+/*
+  This file represents the index page that displays all available tutorials grouped by category.
 
+  Key Functions:
+    - `getStaticProps`: Fetches the navigation data for tutorials.
+    - `groupByCategory`: Organizes tutorials by their category, based on the flat navigation data.
+
+  Components:
+    - `TutorialIndex`: Displays all tutorials with categories.
+    - `CategorySection`: Renders tutorials grouped by category.
+
+  The page uses `Layout` to include the navigation and metadata.
+*/
 import { GetStaticProps } from 'next';
 import Layout from '../../components/layout/Layout';
 import { getNavigation } from '../../lib/navigation';

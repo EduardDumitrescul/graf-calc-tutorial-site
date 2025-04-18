@@ -1,3 +1,8 @@
+/**
+ * A recursive list component for rendering nested navigation items.
+ * It supports collapsible folders and renders navigation links or nested lists based on the item structure.
+ */
+
 import { List, Collapse } from '@mui/material';
 import NavItemLink from './NavItemLink';
 import NavItemFolder from './NavItemFolder';

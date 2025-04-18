@@ -1,3 +1,8 @@
+/**
+ * A set of navigation buttons that highlight the active route.
+ * Dynamically adjusts link styles based on the current path.
+ */
+
 import { Box, Button, Typography, useTheme } from '@mui/material';
 import Link from 'next/link';
 

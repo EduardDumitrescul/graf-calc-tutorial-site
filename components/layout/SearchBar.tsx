@@ -1,3 +1,8 @@
+/**
+ * Compact search bar with a text input and a submit button.
+ * Accepts search term state and a search handler from parent.
+ */
+
 import { Box, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 

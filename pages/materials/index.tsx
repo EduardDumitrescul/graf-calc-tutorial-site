@@ -1,8 +1,12 @@
+// This page displays a list of resources related to learning OpenGL, wrapped within a Layout component.
+// It fetches the navigation structure through `getStaticProps` to include in the page layout.
+
 import Layout from '../../components/layout/Layout';
 import { getNavigation } from '../../lib/navigation';
 import { Box, Container, Typography, Paper, Link as MuiLink } from '@mui/material';
 
 export default function Materials({ navigation }) {
+    // List of external resources related to OpenGL
     const resources = [
         {
             title: 'Documentație Oficială',
@@ -56,6 +60,7 @@ export default function Materials({ navigation }) {
     );
 }
 
+// Fetch navigation data for the layout on the server-side at build time
 export async function getStaticProps() {
     const navigation = getNavigation();
     return { props: { navigation } };

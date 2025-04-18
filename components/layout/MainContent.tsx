@@ -1,3 +1,8 @@
+/**
+ * Main layout component that includes a sidebar navigation and a content area.
+ * Accepts navigation data and child components to display.
+ */
+
 import { Box, Container } from '@mui/material';
 import Navigation from './side-nav/Navigation';
 

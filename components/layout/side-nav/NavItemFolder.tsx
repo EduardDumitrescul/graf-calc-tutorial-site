@@ -1,3 +1,8 @@
+/**
+ * A folder item in the navigation list that can be expanded or collapsed.
+ * It displays the folder name and toggles its expanded state when clicked.
+ */
+
 import { ListItemButton, ListItemText, IconButton, Box } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

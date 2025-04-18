@@ -1,3 +1,17 @@
+/*
+  This file defines a Next.js page for rendering tutorial content using MDX. It dynamically fetches content and metadata for each tutorial using `getStaticPaths` and `getStaticProps`.
+
+  Key Functions:
+    - `getStaticPaths`: Defines the paths for all tutorials to pre-render.
+    - `getStaticProps`: Fetches MDX content and metadata for a specific tutorial.
+
+  Components:
+    - `TutorialPage`: Renders the tutorial content using MDXRemote.
+    - Custom MDX components like `CodeBlock` and `Link` are used for code blocks and links.
+
+  The page is wrapped with the `Layout` component to include navigation and metadata.
+*/
+
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Layout from '../../components/layout/Layout';

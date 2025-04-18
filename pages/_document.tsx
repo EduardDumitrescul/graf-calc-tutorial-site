@@ -1,3 +1,14 @@
+/*
+  This is a custom `Document` component for Next.js.
+
+  The `Document` component is responsible for customizing the HTML document structure.
+  It is used for adding global HTML elements, such as the `<head>` and `<body>` content, that need to be shared across all pages.
+
+  Key parts:
+    - **Head Section**: Contains links for external stylesheets (like KaTeX for math formulas) and commented-out stylesheets for custom styles.
+    - **Body Section**: The body contains the main content and scripts of the page.
+*/
+
 import { Html, Head, Main, NextScript } from 'next/document';
 import {ThemeProvider} from "../components/ThemeContext";
 

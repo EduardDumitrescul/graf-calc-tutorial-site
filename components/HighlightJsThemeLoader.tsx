@@ -1,3 +1,8 @@
+/**
+ * A component that dynamically loads the appropriate syntax highlighting theme
+ * for the Highlight.js library based on the current MUI theme (dark or light).
+ */
+
 import { useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 

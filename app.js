@@ -1,3 +1,11 @@
+/**
+ * Express server for serving tutorial pages and search functionality.
+ *
+ * - Indexes local markdown files using Lunr for full-text search.
+ * - Parses directory structure to dynamically build routes.
+ * - Exposes endpoints for homepage, tutorials, materials, and search.
+ */
+
 'use strict';
 const express = require('express');
 const app = express();
@@ -6,9 +14,9 @@ const path = require('path');
 const marked = require('marked');
 const lunr = require('lunr');
 
-
 const PORT = process.env.PORT || 3000;
 
+// Recursively walks a directory and yields all file paths
 function* walkSync(dir) {
     const files = fs.readdirSync(dir, { withFileTypes: true });
     for (const file of files) {
@@ -20,6 +28,7 @@ function* walkSync(dir) {
     }
 }
 
+// Converts absolute tutorial file paths into relative URL paths
 function getFileStructure(dirpath) {
     let structure = []
     for (const x of walkSync(dirpath)) {
@@ -29,29 +38,32 @@ function getFileStructure(dirpath) {
     return structure;
 }
 
-//stuctura directoare
+// Load tutorial file structure
 const fileStructure = getFileStructure(__dirname + '/tutorial');
 
-//rutele pt directoare
+// TODO: This function is referenced but not defined in this file
 let routes = getRoutes(fileStructure);
 
-let data = []
+let data = [];
 
-// Indexing function to create a Lunr.js index for search
+// Builds the Lunr search index and stores line-level metadata
 function createIndex() {
     return lunr(function () {
         this.pipeline.remove(lunr.stemmer)
         this.ref('ind');
         this.field('content');
         let ind = 0;
+
         fileStructure.forEach(file => {
             if (file.endsWith('.md')) {
                 const markdown = fs.readFileSync(__dirname + file, 'utf8');
                 const title = path.basename(file, '.md');
 
                 let lines = markdown.split('\n').filter(line => line.trim() !== '');
-                lines = lines.map(line => line.trim())
+                lines = lines.map(line => line.trim());
+
                 for (let line = 0; line < lines.length; line++) {
+                    // Capture a small snippet around the line for context
                     let context = "";
                     if (line === 0 || line === lines.length - 1) {
                         context = (line === 0 ? " ... " : lines[line - 1] + " \n ") + lines[line] + (line === lines.length - 1 ? "" : " \n " + lines[line + 1] + " ... ");
@@ -60,27 +72,22 @@ function createIndex() {
                     }
 
                     this.add({ ind: ind, content: lines[line] });
-                    data.push({ id: ind, url: file.replace(".md", ""), title: title, line: lines[line], context: context })
+                    data.push({ id: ind, url: file.replace(".md", ""), title: title, line: lines[line], context: context });
                     ind++;
                 }
-
-
             }
         });
     });
 }
 
-// Create the Lunr.js index
 const index = createIndex();
 
-
-// routes
+// Routes
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home' });
 });
 
-
-// Search endpoint
+// Search API — returns rendered markdown snippets around matches
 app.get('/search', (req, res) => {
     const query = req.query.searchKeyword || '';
     const results = index.search(query);
@@ -103,20 +110,15 @@ app.get('/search', (req, res) => {
 
 app.get('/tutorial', (req, res) => {
     res.render('tutorial', { title: 'Tutorial' });
-
 });
-
-
 
 app.get('/materials', (req, res) => {
     res.render('materials', { title: 'Materials' });
 });
 
-
-// // Pornirea serverului
+// Start server
 app.listen(PORT, () => {
     console.log(`Server adresa http://localhost:${PORT}`);
 });
-
 
 module.exports = app;

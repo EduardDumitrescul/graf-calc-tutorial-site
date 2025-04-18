@@ -1,5 +1,9 @@
-import {alpha, Box, Container, IconButton, Link, Tooltip, Typography, useTheme} from '@mui/material';
+/**
+ * A header component that includes the site logo, navigation buttons, search bar, and theme toggle.
+ * Dynamically adjusts styles based on the current theme.
+ */
 
+import { alpha, Box, Container, IconButton, Link, Tooltip, Typography, useTheme } from '@mui/material';
 import NavButtons from './NavButtons';
 import SearchBar from './SearchBar';
 import React from "react";
@@ -24,7 +28,7 @@ export default function Header({ pathname, searchTerm, setSearchTerm, handleSear
         >
             <Container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Box sx={{ width: 280 }}>
-                    <Link href="/"  component={NextLink} passHref sx={{ textDecoration: 'none'}}>
+                    <Link href="/"  component={NextLink} passHref sx={{ textDecoration: 'none' }}>
                         <Typography variant="h5" sx={ logoStyle() }>
                             Grafică pe Calculator
                         </Typography>
@@ -45,5 +49,3 @@ export default function Header({ pathname, searchTerm, setSearchTerm, handleSear
         </Box>
     );
 }
-
-

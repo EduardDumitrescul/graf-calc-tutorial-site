@@ -1,21 +1,29 @@
+// This file handles the search functionality for the tutorial content
+// It builds an index for all markdown files in the tutorial directory
+// and provides an API route to search through the content and return relevant snippets.
+
+// Importing necessary libraries and utilities
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { parseFilename } from "../../util/FileUtils";
 
+// Defining the directory that contains tutorial files
 const tutorialDir = path.join(process.cwd(), 'tutorial');
 
-const searchIndex: Record<string, string[]> = {};
-const contentCache: Record<string, { content: string; title: string }> = {};
+// Declaring the search index and content cache
+const searchIndex: Record<string, string[]> = {}; // Index to store words and associated file paths
+const contentCache: Record<string, { content: string; title: string }> = {}; // Cache to store the content of each file
 
-// Builds the search index
+// Function to build a search index from markdown files in the tutorial directory
 function buildSearchIndex() {
     try {
         if (!fs.existsSync(tutorialDir)) {
             return;
         }
 
+        // Recursive function to index the content of markdown files
         function indexDirectory(dir, basePath = '') {
             const files = fs.readdirSync(dir);
 
@@ -58,19 +66,21 @@ function buildSearchIndex() {
             }
         }
 
+        // Start indexing from the tutorial directory
         indexDirectory(tutorialDir, 'tutorial');
     } catch (error) {
         console.error('Error building search index:', error);
     }
 }
 
-// Extract snippets based on the search term(s)
+// Function to extract relevant snippets from content based on search terms
 function extractRelevantSnippets(content: string, searchTerms: string[], maxSnippets = 3, snippetLength = 150) {
     const contentLower = content.toLowerCase();
     const matches = [];
     let lastIndex = 0;
     let count = 0;
 
+    // Search through the content for each search term
     searchTerms.forEach(term => {
         let termIndex = 0;
 
@@ -106,6 +116,7 @@ function extractRelevantSnippets(content: string, searchTerms: string[], maxSnip
         }
     });
 
+    // Sort the snippets based on relevance
     matches.sort((a, b) => b.relevance - a.relevance);
     return matches.map(match => match.snippet);
 }
@@ -123,6 +134,7 @@ export default function handler(req, res) {
             buildSearchIndex();
         }
 
+        // Split search query into individual terms and filter short words
         const searchTerms = q.toLowerCase().split(/\s+/).filter(term => term.length > 2);
 
         if (searchTerms.length === 0) {
@@ -131,6 +143,7 @@ export default function handler(req, res) {
 
         const documentFrequency: Record<string, number> = {};
 
+        // Calculate document frequency for each search term
         searchTerms.forEach(term => {
             const matchingDocs = Object.keys(searchIndex).filter(indexTerm =>
                 indexTerm.includes(term)
@@ -141,6 +154,7 @@ export default function handler(req, res) {
             });
         });
 
+        // Sort documents based on their relevance
         const sortedDocs = Object.keys(documentFrequency)
             .sort((a, b) => documentFrequency[b] - documentFrequency[a]);
 
@@ -148,6 +162,7 @@ export default function handler(req, res) {
             const { content, title } = contentCache[doc];
             const snippets = extractRelevantSnippets(content, searchTerms);
 
+            // Convert the snippets into HTML using marked
             const formattedSnippets = snippets.map(snippet =>
                 marked(snippet, { breaks: true })
             );

@@ -1,3 +1,13 @@
+/*
+  The `Home` component renders the homepage for the website, featuring a brief introduction and a summary of available materials for the "Grafică pe Calculator" course.
+
+  It fetches navigation data statically and displays basic details about the course and professor.
+
+  Key parts:
+    - **`getStaticProps`**: Fetches the navigation data needed for the page.
+    - **`Home` Component**: Displays the course title, professor's name, and description with a call-to-action.
+*/
+
 import React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
