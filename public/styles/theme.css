@@ -1,0 +1,1038 @@
+/*!* Dark Theme for OpenGL Tutorials *!*/
+/*:root {*/
+/*  --bg-color: #121212;*/
+/*  --text-color: #cdcbcb;*/
+/*  --text-secondary: #a0a0a0;*/
+/*  --header-bg: #1e1e1e;*/
+/*  --sidebar-bg: #1e1e1e;*/
+/*  --card-bg: #2a2a2a;*/
+/*  --border-color: #333333;*/
+/*  --primary-color: #4f9eed;*/
+/*  --primary-dark: #3a7bbd;*/
+/*  --code-bg: #2d2d2d;*/
+/*  --sidebar-hover: #333333;*/
+/*  --input-bg: #2a2a2a;*/
+/*  --link-color: #5c9ce6;*/
+/*  --active-link: #81c1ff;*/
+/*  --button-bg: #333;*/
+/*  --button-hover: #444;*/
+/*  --search-bg: #333;*/
+/*  --container-bg: #111;*/
+/*}*/
+
+/*!* Light Theme *!*/
+/*body[data-theme="light"] {*/
+/*  --bg-color: #f5f5f5;*/
+/*  --text-color: #333;*/
+/*  --sidebar-bg: #e8e8e8;*/
+/*  --sidebar-hover: #d8d8d8;*/
+/*  --header-bg: #ffffff;*/
+/*  --link-color: #0066cc;*/
+/*  --active-link: #004499;*/
+/*  --code-bg: #f0f0f0;*/
+/*  --code-color: #333;*/
+/*  --border-color: #ddd;*/
+/*  --card-bg: #ddd;*/
+/*  --button-bg: #e0e0e0;*/
+/*  --button-hover: #d0d0d0;*/
+/*  --search-bg: #fff;*/
+/*  --container-bg: #ffffff;*/
+/*  --input-bg: #ffffff;*/
+/*}*/
+
+/*body {*/
+/*  background-color: var(--bg-color);*/
+/*  color: var(--text-color);*/
+/*  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+
+/*!* Layout *!*/
+/*.layout {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  min-height: 100vh;*/
+/*}*/
+
+/*.content-wrapper {*/
+/*  display: flex;*/
+/*  flex: 1;*/
+/*  background-color: var(--bg-color);*/
+/*}*/
+
+/*main {*/
+/*  flex: 1;*/
+/*  padding: 2rem;*/
+/*  max-width: 100%;*/
+/*}*/
+
+/*!* Header - corectate stilurile pentru a respecta tema *!*/
+/*header {*/
+/*  background-color: var(--header-bg) !important;*/
+/*  border-bottom: 1px solid var(--border-color);*/
+/*}*/
+
+/*header .container {*/
+/*  background-color: var(--header-bg) !important;*/
+/*  color: var(--text-color);*/
+/*}*/
+
+/*.main-nav {*/
+/*  background-color: var(--header-bg) !important;*/
+/*}*/
+
+
+
+/*.nav-links {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.nav-tools {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.main-nav a {*/
+/*  color: var(--text-color) !important;*/
+/*  text-decoration: none;*/
+/*  margin-right: 1.5rem;*/
+/*  transition: color 0.2s;*/
+/*}*/
+
+/*.main-nav a:hover {*/
+/*  color: var(--active-link) !important;*/
+/*}*/
+
+/*.main-nav a.active {*/
+/*  color: var(--active-link) !important;*/
+/*  border-bottom: 2px solid var(--primary-color);*/
+/*}*/
+
+/*.container {*/
+/*  background-color: var(--container-bg);*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
+
+/*!* Search *!*/
+/*.search {*/
+/*  float: right;*/
+/*}*/
+
+/*.search input {*/
+/*  background-color: var(--search-bg);*/
+/*  border: 1px solid var(--border-color);*/
+/*  color: var(--text-color);*/
+/*  padding: 0.5rem;*/
+/*  margin-right: 0.5rem;*/
+/*  border-radius: 4px;*/
+/*}*/
+
+/*.search input::placeholder {*/
+/*  color: #999;*/
+/*}*/
+
+/*.search button {*/
+/*  background-color: var(--button-bg);*/
+/*  color: var(--text-color);*/
+/*  border: none;*/
+/*  padding: 0.5rem 1rem;*/
+/*  border-radius: 4px;*/
+/*  cursor: pointer;*/
+/*  transition: background-color 0.2s;*/
+/*}*/
+
+/*.search button:hover {*/
+/*  background-color: var(--button-hover);*/
+/*}*/
+
+/*!* Sidebar Navigation *!*/
+/*.sidebar {*/
+/*  width: 250px;*/
+/*  background-color: var(--sidebar-bg);*/
+/*  color: var(--text-color);*/
+/*  padding: 1.5rem 1rem;*/
+/*  overflow-y: auto;*/
+/*  border-right: 1px solid var(--border-color);*/
+/*}*/
+
+/*.nav-list {*/
+/*  list-style: none;*/
+/*  padding: 0;*/
+/*  margin: 0;*/
+/*}*/
+
+/*.nav-list li {*/
+/*  margin-bottom: 0.2rem;*/
+/*}*/
+
+/*.nav-category {*/
+/*  margin-bottom: 0.8rem;*/
+/*}*/
+
+/*.nav-category > span {*/
+/*  display: block;*/
+/*  color: #bbb;*/
+/*  font-size: 0.95rem;*/
+/*  font-weight: 600;*/
+/*  margin-bottom: 0.5rem;*/
+/*  padding-left: 0.5rem;*/
+/*}*/
+
+/*!* Stiluri modificate pentru indentarea corectă *!*/
+/*.nav-list .nav-list {*/
+/*  margin-top: 0.3rem;*/
+/*  margin-bottom: 0.2rem;*/
+/*}*/
+
+/*.nav-list a {*/
+/*  color: var(--text-color);*/
+/*  text-decoration: none;*/
+/*  display: block;*/
+/*  padding: 0.25rem 0.5rem;*/
+/*  border-radius: 4px;*/
+/*  transition: background-color 0.2s;*/
+/*  font-size: 0.9rem;*/
+/*}*/
+
+/*.nav-list a:hover {*/
+/*  background-color: var(--sidebar-hover);*/
+/*}*/
+
+/*.nav-list a.active {*/
+/*  color: var(--active-link);*/
+/*  background-color: rgba(92, 156, 230, 0.1);*/
+/*}*/
+
+/*!* Markdown Content *!*/
+/*.markdown-content {*/
+/*  color: var(--text-color);*/
+/*  line-height: 1.6;*/
+/*}*/
+
+/*.markdown-content h1 {*/
+/*  font-size: 2rem;*/
+/*  margin-bottom: 1.5rem;*/
+/*  padding-bottom: 0.5rem;*/
+/*  border-bottom: 1px solid var(--border-color);*/
+/*}*/
+
+/*.markdown-content h2 {*/
+/*  font-size: 1.5rem;*/
+/*  margin: 1.5rem 0 1rem;*/
+/*  padding-bottom: 0.3rem;*/
+/*}*/
+
+/*!* Code blocks with dark styling - îmbunătățit și corectate pentru a respecta tema *!*/
+/*!*.markdown-content pre {*!*/
+/*!*  background-color: var(--code-bg) !important;*!*/
+/*!*  color: var(--code-color) !important;*!*/
+/*!*  padding: 1rem;*!*/
+/*!*  border-radius: 5px;*!*/
+/*!*  overflow: auto;*!*/
+/*!*  margin: 1.5rem 0;*!*/
+/*!*  border: 1px solid var(--border-color);*!*/
+/*!*  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;*!*/
+/*!*}*!*/
+
+/*.markdown-content code {*/
+/*  background-color: var(--code-bg) !important;*/
+/*  color: var(--code-color) !important;*/
+/*  padding: 0.2rem 0.4rem;*/
+/*  border-radius: 3px;*/
+/*  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;*/
+/*  font-size: 0.9em;*/
+/*}*/
+
+/*.markdown-content p code,*/
+/*.markdown-content li code,*/
+/*.markdown-content table code {*/
+/*  background-color: rgba(40, 44, 52, 0.5);*/
+/*  padding: 0.1rem 0.4rem;*/
+/*  border: 1px solid var(--border-color);*/
+/*}*/
+
+/*!* Îmbunătățit pentru C++ si alte limbaje *!*/
+/*!*pre code.hljs {*!*/
+/*!*  display: block;*!*/
+/*!*  overflow-x: auto;*!*/
+/*!*  padding: 0;*!*/
+/*!*  background: var(--code-bg);*!*/
+/*!*  color: var(--code-color);*!*/
+/*!*}*!*/
+
+/*!* Tables *!*/
+/*.markdown-content table {*/
+/*  border-collapse: collapse;*/
+/*  width: 100%;*/
+/*  margin: 2rem 0;*/
+/*  background-color: var(--card-bg);*/
+/*  border-radius: 5px;*/
+/*  overflow: hidden;*/
+/*}*/
+
+/*.markdown-content table th,*/
+/*.markdown-content table td {*/
+/*  border: 1px solid var(--border-color);*/
+/*  padding: 10px 15px;*/
+/*  text-align: left;*/
+/*}*/
+
+/*.markdown-content table th {*/
+/*  background-color: #2a2a2a;*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*.markdown-content table tr:nth-child(even) {*/
+/*  background-color: #2d2d2d;*/
+/*}*/
+
+/*!* Footer *!*/
+/*footer {*/
+/*  background-color: var(--header-bg);*/
+/*  color: #888;*/
+/*  padding: 1.5rem 0;*/
+/*  text-align: center;*/
+/*  border-top: 1px solid var(--border-color);*/
+/*}*/
+
+/*!* Links in content *!*/
+/*.markdown-content a {*/
+/*  color: var(--link-color);*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.markdown-content a:hover {*/
+/*  text-decoration: underline;*/
+/*}*/
+
+/*!* Images *!*/
+/*.markdown-content img {*/
+/*  max-width: 100%;*/
+/*  border-radius: 5px;*/
+/*  margin: 1.5rem 0;*/
+/*  border: 1px solid var(--border-color);*/
+/*}*/
+
+/*!* Code highlighting *!*/
+/*.hljs-keyword,*/
+/*.hljs-selector-tag,*/
+/*.hljs-built_in,*/
+/*.hljs-name,*/
+/*.hljs-tag {*/
+/*  color: #c678dd;*/
+/*}*/
+
+/*.hljs-string,*/
+/*.hljs-title,*/
+/*.hljs-section,*/
+/*.hljs-attribute,*/
+/*.hljs-literal,*/
+/*.hljs-template-tag,*/
+/*.hljs-template-variable,*/
+/*.hljs-type,*/
+/*.hljs-addition {*/
+/*  color: #98c379;*/
+/*}*/
+
+/*.hljs-comment,*/
+/*.hljs-quote,*/
+/*.hljs-deletion {*/
+/*  color: #5c6370;*/
+/*}*/
+
+/*.hljs-number,*/
+/*.hljs-regexp,*/
+/*.hljs-bullet,*/
+/*.hljs-link {*/
+/*  color: #d19a66;*/
+/*}*/
+
+/*.hljs-meta {*/
+/*  color: #61aeee;*/
+/*}*/
+
+/*.hljs-keyword,*/
+/*.hljs-selector-tag,*/
+/*.hljs-title,*/
+/*.hljs-section,*/
+/*.hljs-name,*/
+/*.hljs-strong {*/
+/*  font-weight: normal;*/
+/*}*/
+
+/*!* Syntax highlighting îmbunătățit pentru C++ *!*/
+/*.language-cpp .hljs-preprocessor,*/
+/*.language-cpp .hljs-keyword {*/
+/*  color: #c678dd; !* mov pentru keywords *!*/
+/*}*/
+
+/*.language-cpp .hljs-string {*/
+/*  color: #98c379; !* verde pentru strings *!*/
+/*}*/
+
+/*.language-cpp .hljs-built_in,*/
+/*.language-cpp .hljs-type {*/
+/*  color: #e6c07b; !* galben pentru tipuri *!*/
+/*}*/
+
+/*.language-cpp .hljs-comment {*/
+/*  color: #5c6370; !* gri pentru comentarii *!*/
+/*  font-style: italic;*/
+/*}*/
+
+/*.language-cpp .hljs-function {*/
+/*  color: #61afef; !* albastru pentru funcții *!*/
+/*}*/
+
+/*.language-cpp .hljs-number,*/
+/*.language-cpp .hljs-literal {*/
+/*  color: #d19a66; !* portocaliu pentru numere și literali *!*/
+/*}*/
+
+/*!* Stiluri specifice pentru blocurile matematice *!*/
+/*.katex {*/
+/*  font-size: 1.1em;*/
+/*}*/
+
+/*.katex-display {*/
+/*  margin: 1.5rem 0;*/
+/*  overflow-x: auto;*/
+/*  overflow-y: hidden;*/
+/*  padding: 0.5rem 0;*/
+/*}*/
+
+/*!* Ajustări pentru mobil și responsive *!*/
+/*@media (max-width: 1024px) {*/
+/*  .content-wrapper {*/
+/*    flex-direction: column;*/
+/*  }*/
+
+/*  .sidebar {*/
+/*    width: 100%;*/
+/*    border-right: none;*/
+/*    border-bottom: 1px solid var(--border-color);*/
+/*    padding: 1rem;*/
+/*  }*/
+
+/*  main {*/
+/*    padding: 1.5rem;*/
+/*  }*/
+
+/*  .main-nav .container {*/
+/*    padding: 0 1rem;*/
+/*  }*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*  .main-nav .container {*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*  }*/
+
+/*  .nav-links {*/
+/*    margin-bottom: 1rem;*/
+/*    flex-wrap: wrap;*/
+/*  }*/
+
+/*  .nav-tools {*/
+/*    width: 100%;*/
+/*    justify-content: space-between;*/
+/*  }*/
+
+/*  .search {*/
+/*    flex-grow: 1;*/
+/*    margin-right: 1rem;*/
+/*  }*/
+
+/*  .search form {*/
+/*    display: flex;*/
+/*  }*/
+
+/*  .search input {*/
+/*    flex-grow: 1;*/
+/*  }*/
+
+/*  .theme-toggle {*/
+/*    margin-left: 0;*/
+/*    position: static;*/
+/*  }*/
+
+/*  main {*/
+/*    padding: 1.5rem;*/
+/*  }*/
+
+/*  .markdown-content pre {*/
+/*    padding: 0.8rem;*/
+/*  }*/
+
+/*  .markdown-content h1 {*/
+/*    font-size: 1.8rem;*/
+/*  }*/
+
+/*  .markdown-content h2 {*/
+/*    font-size: 1.4rem;*/
+/*  }*/
+/*}*/
+
+/*@media (max-width: 480px) {*/
+/*  .nav-links {*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*    width: 100%;*/
+/*  }*/
+
+/*  .nav-links a {*/
+/*    margin-right: 0;*/
+/*    margin-bottom: 0.5rem;*/
+/*    width: 100%;*/
+/*  }*/
+
+/*  .nav-tools {*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*  }*/
+
+/*  .search {*/
+/*    width: 100%;*/
+/*    margin-right: 0;*/
+/*    margin-bottom: 0.8rem;*/
+/*  }*/
+
+/*  .theme-toggle {*/
+/*    align-self: flex-end;*/
+/*    margin-top: -2.5rem;*/
+/*  }*/
+
+/*  main {*/
+/*    padding: 1rem;*/
+/*  }*/
+
+/*  .markdown-content table {*/
+/*    display: block;*/
+/*    overflow-x: auto;*/
+/*  }*/
+/*}*/
+
+/*!* Buton pentru schimbarea temei *!*/
+/*.theme-toggle {*/
+/*  background: transparent;*/
+/*  border: none;*/
+/*  cursor: pointer;*/
+/*  font-size: 1.2rem;*/
+/*  margin-left: 1rem;*/
+/*  padding: 0.3rem 0.3rem;*/
+/*  border-radius: 10%;*/
+/*  transition: background-color 0.2s;*/
+/*  position: relative;*/
+/*  top: 2px;*/
+/*}*/
+
+/*.theme-toggle:hover {*/
+/*  background-color: var(--button-hover);*/
+/*}*/
+
+/*!* Ajustări specifice pentru tema light *!*/
+/*body[data-theme="light"] .markdown-content pre {*/
+/*  border: 1px solid #ddd;*/
+/*}*/
+
+/*body[data-theme="light"] .markdown-content table th {*/
+/*  background-color: #e8e8e8;*/
+/*}*/
+
+/*body[data-theme="light"] .markdown-content table tr:nth-child(even) {*/
+/*  background-color: #f8f8f8;*/
+/*}*/
+
+/*body[data-theme="light"] .hljs {*/
+/*  background-color: #f0f0f0;*/
+/*  color: #333;*/
+/*}*/
+
+/*!* Ajustare pentru highlight.js pe tema light *!*/
+/*body[data-theme="light"] .hljs-comment {*/
+/*  color: #008000;*/
+/*}*/
+
+/*body[data-theme="light"] .hljs-keyword {*/
+/*  color: #0000ff;*/
+/*}*/
+
+/*body[data-theme="light"] .hljs-string {*/
+/*  color: #a31515;*/
+/*}*/
+
+/*body[data-theme="light"] .hljs-number,*/
+/*body[data-theme="light"] .hljs-literal {*/
+/*  color: #098658;*/
+/*}*/
+
+/*body[data-theme="light"] .hljs-function,*/
+/*body[data-theme="light"] .hljs-title {*/
+/*  color: #795e26;*/
+/*}*/
+
+/*body[data-theme="light"] .hljs-type,*/
+/*body[data-theme="light"] .hljs-built_in {*/
+/*  color: #267f99;*/
+/*}*/
+
+/*!* Code blocks specific styling *!*/
+/*!* Asigurăm că blocurile de cod highlight.js respectă tema *!*/
+/*!*.hljs {*!*/
+/*!*  display: block;*!*/
+/*!*  overflow-x: auto;*!*/
+/*!*  padding: 0.5em;*!*/
+/*!*  color: var(--code-color) !important;*!*/
+/*!*  background: var(--code-bg) !important;*!*/
+/*!*}*!*/
+
+/*!* Forțăm tema dark pentru blocurile de cod *!*/
+/*!*code, pre {*!*/
+/*!*  color: var(--code-color) !important;*!*/
+/*!*  background-color: var(--code-bg) !important;*!*/
+/*!*}*!*/
+
+/*!* Ajustări specifice pentru tema light *!*/
+/*!*body[data-theme="light"] pre,*!*/
+/*!*body[data-theme="light"] code,*!*/
+/*.hljs {*/
+/*  color: var(--code-color) !important;*/
+/*  background-color: var(--code-bg) !important;*/
+/*}*/
+
+/*!* Ajustare pentru highlight.js pe tema light *!*/
+/*body[data-theme="light"] .hljs {*/
+/*  background-color: var(--code-bg) !important;*/
+/*  color: var(--code-color) !important;*/
+/*}*/
+
+/*!* Asigurăm că tema se aplică corect la toate componentele care conțin cod *!*/
+/*!*html[data-theme="light"] pre,*!*/
+/*!*html[data-theme="light"] code,*!*/
+/*!*html[data-theme="light"] .hljs,*!*/
+/*!*html[data-theme="dark"] pre,*!*/
+/*!*html[data-theme="dark"] code,*!*/
+/*html[data-theme="dark"] .hljs {*/
+/*  color: var(--code-color) !important;*/
+/*  background-color: var(--code-bg) !important;*/
+/*}*/
+
+/*!* Asigurăm că containerele folosesc variabilele corecte *!*/
+/*.container, .main-nav, header, footer {*/
+/*  background-color: var(--header-bg) !important;*/
+/*  color: var(--text-color) !important;*/
+/*  transition: background-color 0.3s ease, color 0.3s ease;*/
+/*}*/
+
+/*!* Stilizăm elementele blockquote mai bine pentru toate temele *!*/
+/*.markdown-content blockquote {*/
+/*  margin: 1.5rem 0;*/
+/*  padding: 0.8rem 1.2rem;*/
+/*  border-left: 4px solid var(--link-color);*/
+/*  background-color: rgba(92, 156, 230, 0.1);*/
+/*  transition: all 0.3s ease;*/
+/*}*/
+
+/*.markdown-content blockquote p {*/
+/*  margin: 0.5rem 0;*/
+/*  color: var(--text-color);*/
+/*}*/
+
+/*.markdown-content blockquote > blockquote {*/
+/*  margin: 0.8rem 0 0.8rem 0.8rem;*/
+/*  border-left-color: var(--active-link);*/
+/*}*/
+
+/*!* Stilizăm caracterul > pentru ambele teme *!*/
+/*.markdown-content blockquote::before {*/
+/*  content: "";*/
+/*  margin-right: 0.3rem;*/
+/*}*/
+
+/*!* Stiluri pentru tema light specifice pentru blockquote *!*/
+/*body[data-theme="light"] .markdown-content blockquote {*/
+/*  background-color: rgba(0, 102, 204, 0.1);*/
+/*  border-left-color: var(--link-color);*/
+/*}*/
+
+/*body[data-theme="light"] .markdown-content blockquote > blockquote {*/
+/*  border-left-color: var(--active-link);*/
+/*}*/
+
+/*!* Fix pentru containerul principal în mobile *!*/
+/*@media (max-width: 768px) {*/
+/*  .container {*/
+/*    width: 100%;*/
+/*    padding: 0 1rem;*/
+/*  }*/
+
+/*  header .container {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*  }*/
+
+/*  .main-nav {*/
+/*    width: 100%;*/
+/*  }*/
+/*}*/
+
+/*!* Stilizare pentru operatorii din cod (inclusiv >) *!*/
+/*!*.hljs-operator,*!*/
+/*!*.hljs-punctuation,*!*/
+/*!*.language-cpp .hljs-operator,*!*/
+/*!*.language-cpp .hljs-punctuation {*!*/
+/*!*  color: #abb2bf !important; !* Culoare neutră pentru operatori în tema dark *!*!*/
+/*!*}*!*/
+
+/*!*body[data-theme="light"] .hljs-operator,*!*/
+/*!*body[data-theme="light"] .hljs-punctuation,*!*/
+/*!*body[data-theme="light"] .language-cpp .hljs-operator,*!*/
+/*!*body[data-theme="light"] .language-cpp .hljs-punctuation {*!*/
+/*!*  color: #333 !important; !* Culoare neutră pentru operatori în tema light *!*!*/
+/*!*}*!*/
+
+/*!* Override pentru caracterele speciale în blocurile de cod *!*/
+/*!*code .token.operator,*!*/
+/*!*code .token.entity,*!*/
+/*!*code .token.url,*!*/
+/*!*code .token.string,*!*/
+/*!*code .token.variable,*!*/
+/*!*code .token.punctuation {*!*/
+/*!*  background: transparent !important;*!*/
+/*!*  color: inherit !important;*!*/
+/*!*}*!*/
+
+/*!* Reparam stilurile markdown pentru toate mediile și ecranele *!*/
+/*!*.markdown-content pre,*!*/
+/*!*.markdown-content code,*!*/
+/*!*.markdown-content pre code {*!*/
+/*!*  background-color: var(--code-bg) !important;*!*/
+/*!*  color: var(--code-color) !important;*!*/
+/*!*  border-radius: 4px;*!*/
+/*!*  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;*!*/
+/*!*}*!*/
+
+/*!*.markdown-content pre > code {*!*/
+/*!*  border: none;*!*/
+/*!*  padding: 0;*!*/
+/*!*  background-color: transparent !important;*!*/
+/*!*}*!*/
+
+/*!* Override pentru a repara stilurile inconsistente în blocurile de cod*!*/
+/*!*html .hljs,*!*/
+/*!*html code,*!*/
+/*!*html pre,*!*/
+/*!*html[data-theme] .hljs,*!*/
+/*!*html[data-theme] code,*!*/
+/*!*html[data-theme] pre,*!*/
+/*!*body .hljs,*!*/
+/*!*body code,*!*/
+/*!*body pre,*!*/
+/*!*body[data-theme] .hljs,*!*/
+/*!*body[data-theme] code,*!*/
+/*!*body[data-theme] pre {*!*/
+/*!*  background-color: var(--code-bg) !important;*!*/
+/*!*  color: var(--code-color) !important;*!*/
+/*!*  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;*!*/
+/*!*}*!*/
+
+/*!*!* Override pentru stiluri highlight.js pentru ambele teme *!*!*/
+/*!*.hljs-operator,*!*/
+/*!*.hljs-punctuation,*!*/
+/*!*.hljs-subst {*!*/
+/*!*  color: red !important;*!*/
+/*!*}*!*/
+
+/*!*body[data-theme="light"] .hljs-operator,*!*/
+/*!*body[data-theme="light"] .hljs-punctuation,*!*/
+/*!*body[data-theme="light"] .hljs-subst {*!*/
+/*!*  color: red !important;*!*/
+/*!*}*!*/
+
+/*!* Override puternic pentru header și navigare - FIXAT *!*/
+/*body {*/
+/*  background-color: var(--bg-color) !important;*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*header {*/
+/*  background-color: var(--header-bg) !important;*/
+/*  color: var(--text-color) !important;*/
+/*  border-bottom: 1px solid var(--border-color) !important;*/
+/*}*/
+
+/*.main-nav {*/
+/*  background-color: var(--header-bg) !important;*/
+/*}*/
+
+/*.container {*/
+/*  background-color: var(--container-bg) !important;*/
+/*}*/
+
+
+
+/*!* Override pentru tema light *!*/
+/*!*body[data-theme="light"] header,*!*/
+/*!*html[data-theme="light"] header,*!*/
+/*!*body.light-theme header {*!*/
+/*!*  background-color: var(--header-bg) !important;*!*/
+/*!*}*!*/
+
+/*!* Stiluri pentru expand/collapse folder structure *!*/
+
+/*!* Stilizare pentru numele de foldere *!*/
+/*.folder-name {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  cursor: pointer;*/
+/*  padding: 0.3rem 0.5rem;*/
+/*  border-radius: 4px;*/
+/*  transition: background-color 0.2s;*/
+/*  font-weight: 500;*/
+/*  user-select: none;*/
+/*}*/
+
+/*.folder-name:hover {*/
+/*  background-color: var(--sidebar-hover);*/
+/*}*/
+
+/*!* Iconițe pentru expandare/restrângere *!*/
+/*.expand-icon {*/
+/*  display: inline-block;*/
+/*  width: 16px;*/
+/*  height: 16px;*/
+/*  margin-right: 5px;*/
+/*  font-size: 10px;*/
+/*  text-align: center;*/
+/*  line-height: 16px;*/
+/*  color: var(--text-color);*/
+/*  transition: transform 0.2s;*/
+/*}*/
+
+/*!* Iconițe pentru fișiere *!*/
+/*.file-icon {*/
+/*  margin-right: 5px;*/
+/*  font-size: 0.9rem;*/
+/*}*/
+
+/*!* Stiluri pentru link-uri de fișiere *!*/
+/*.nav-list a {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*!* Animație pentru expandare *!*/
+/*.nav-list ul {*/
+/*  max-height: 0;*/
+/*  overflow: hidden;*/
+/*  transition: max-height 0.3s ease-out;*/
+/*}*/
+
+/*.nav-list ul.expanded {*/
+/*  max-height: 1000px; !* Valoare mare pentru a permite afișarea completă *!*/
+/*  transition: max-height 0.5s ease-in;*/
+/*}*/
+
+/*!* Stiluri mai clare pentru foldere vs fișiere *!*/
+/*.nav-category {*/
+/*  margin-bottom: 0.3rem;*/
+/*}*/
+
+/*.nav-category > span {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  color: var(--text-color);*/
+/*  font-size: 0.95rem;*/
+/*  margin-bottom: 0.2rem;*/
+/*  padding: 0.25rem 0.5rem;*/
+/*  border-radius: 4px;*/
+/*}*/
+
+/*.nav-category > span:hover {*/
+/*  background-color: var(--sidebar-hover);*/
+/*}*/
+
+/*!* Stiluri generale pentru tema întunecată *!*/
+/*body {*/
+/*  background-color: var(--bg-color);*/
+/*  color: var(--text-color);*/
+/*}*/
+
+/*!* Stilizare header *!*/
+/*body .main-header {*/
+/*  background-color: var(--header-bg) !important;*/
+/*  border-bottom: 1px solid var(--border-color) !important;*/
+/*}*/
+
+/*body .main-nav .container {*/
+/*  background-color: var(--header-bg) !important;*/
+/*}*/
+
+/*!* Stilizare logo și navigare *!*/
+/*body .logo {*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*body .nav-links a,*/
+/*body .nav-tools * {*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*!* Stilizare căutare *!*/
+/*body .search input {*/
+/*  background-color: var(--input-bg) !important;*/
+/*  border-color: var(--border-color) !important;*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*body .search button svg path {*/
+/*  fill: var(--text-color) !important;*/
+/*}*/
+
+/*!* Stilizare sidebar *!*/
+/*body .sidebar {*/
+/*  background-color: var(--sidebar-bg) !important;*/
+/*  border-right: 1px solid var(--border-color) !important;*/
+/*}*/
+
+/*body .sidebar h2 {*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*body .nav-list a {*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*body .folder-name {*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*body .nav-list a:hover,*/
+/*body .folder-name:hover {*/
+/*  background-color: var(--sidebar-hover) !important;*/
+/*}*/
+
+/*body .nav-list a.active {*/
+/*  color: var(--primary-color) !important;*/
+/*  font-weight: 600 !important;*/
+/*}*/
+
+/*!* Stilizare conținut *!*/
+/*body .content {*/
+/*  background-color: var(--bg-color) !important;*/
+/*}*/
+
+/*!* Stilizare link-uri *!*/
+/*body a {*/
+/*  color: var(--primary-color) !important;*/
+/*}*/
+
+/*!* Stilizare carduri și containere *!*/
+/*body .tutorial-card,*/
+/*body .search-snippet,*/
+/*body .result-item,*/
+/*body .cta-section {*/
+/*  background-color: var(--card-bg) !important;*/
+/*  border-color: var(--border-color) !important;*/
+/*}*/
+
+/*!* Stilizare cod *!*/
+/*!*body pre,*!*/
+/*!*body code {*!*/
+/*!*  !*background-color: var(--code-bg) !important;*!*!*/
+/*!*  color: #f8f8f2 !important;*!*/
+/*!*}*!*/
+
+/*!* Stilizare footer *!*/
+/*body footer {*/
+/*  background-color: var(--header-bg) !important;*/
+/*  border-top: 1px solid var(--border-color) !important;*/
+/*  color: var(--text-secondary) !important;*/
+/*}*/
+
+/*!* Stilizare butoane *!*/
+/*body .btn.primary {*/
+/*  background-color: var(--primary-color) !important;*/
+/*  color: white !important;*/
+/*}*/
+
+/*body .btn.primary:hover {*/
+/*  background-color: var(--primary-dark) !important;*/
+/*}*/
+
+/*!* Stilizare input-uri *!*/
+/*body input,*/
+/*body textarea,*/
+/*body select {*/
+/*  background-color: var(--input-bg) !important;*/
+/*  border-color: var(--border-color) !important;*/
+/*  color: var(--text-color) !important;*/
+/*}*/
+
+/*!* Stilizare tabele *!*/
+/*body table {*/
+/*  border-color: var(--border-color) !important;*/
+/*}*/
+
+/*body th,*/
+/*body td {*/
+/*  border-color: var(--border-color) !important;*/
+/*}*/
+
+/*body th {*/
+/*  background-color: var(--sidebar-bg) !important;*/
+/*}*/
+
+/*body tr:nth-child(even) {*/
+/*  background-color: rgba(255, 255, 255, 0.03) !important;*/
+/*}*/
+
+/*!* Stilizare blockquote *!*/
+/*body blockquote {*/
+/*  background-color: var(--card-bg) !important;*/
+/*  border-left-color: var(--primary-color) !important;*/
+/*}*/
+
+/*!* Stiluri pentru navigare și sidebar*!*/
+/*.sidebar {*/
+/*  background-color: var(--sidebar-bg);*/
+/*  border-right-color: var(--border-color);*/
+/*}*/
+
+/*.nav-list a {*/
+/*  color: var(--text-color);*/
+/*}*/
+
+/*.nav-list a:hover {*/
+/*  background-color: var(--sidebar-hover);*/
+/*}*/
+
+/*.nav-list li.active:not(.nav-category) a {*/
+/*  background-color: rgba(92, 156, 230, 0.1);*/
+/*  color: var(--active-link);*/
+/*}*/
+
+/*.folder-name {*/
+/*  color: var(--text-color);*/
+/*}*/
+
+/*[data-theme="dark"] .folder-name:hover {*/
+/*  background-color: var(--sidebar-hover);*/
+/*}*/
+
+/*[data-theme="dark"] .folder-name.active {*/
+/*  background-color: rgba(92, 156, 230, 0.1);*/
+/*  color: var(--active-link);*/
+/*}*/
+
+/*[data-theme="dark"] .nav-list li.nav-category:before {*/
+/*  background-color: var(--border-color);*/
+/*}*/
+
+
+/*html {*/
+/*  background-color: var(--bg-color);*/
+/*}*/

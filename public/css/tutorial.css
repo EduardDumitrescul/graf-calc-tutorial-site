@@ -1,0 +1,161 @@
+/*:root {*/
+/*    --page-text-col: #cecece;*/
+/*    --page-span-text-col: #666;*/
+/*    --bg-color-code: #b1b1b1;*/
+
+/*}*/
+
+/*.light {*/
+/*    --bg-color-code: #232323;*/
+/*    --page-text-col: #000000;*/
+/*    --page-span-text-col: #666;*/
+/*}*/
+
+/*h1, h4, h2, h3, h6 {*/
+/*    margin: 2px;*/
+/*    color: var(--text-color);*/
+/*}*/
+
+/*.col-lg-3 {*/
+/*    position: relative;*/
+/*}*/
+
+/*.content-menu, .content-search {*/
+/*    position: sticky;*/
+/*    top: 90px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    border-radius: 23px;*/
+/*    background-color: var(--nav-bg);*/
+/*    padding: 30px;*/
+/*    margin-bottom: 10px;*/
+/*    min-height: fit-content;*/
+/*    overflow-x: hidden;*/
+/*}*/
+
+/*.content-menu {*/
+/*    overflow-y: scroll;*/
+/*}*/
+
+/*.content-menu h4,.content-search h4 {*/
+/*    margin-bottom: 28px;*/
+/*}*/
+
+/*.content-menu ul,.content-search ul {*/
+/*    list-style: none;*/
+/*}*/
+
+/*.content-menu ul li , .content-search ul li{*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    width: 100%;*/
+/*    margin-bottom: 28px;*/
+/*    list-style: none;*/
+/*}*/
+
+/*.content-menu ul li p, .content-search ul li p,.content-search p {*/
+/*    color: var(--nav-text-col);*/
+/*}*/
+
+/*.content-search .search-results {*/
+/*    list-style: inside;*/
+/*}*/
+
+/*.content-search .search-results li {*/
+/*    list-style: inside;*/
+/*}*/
+
+/*.content-menu ul li h4, .content-search .search-results li h4 {*/
+/*    color: var(--nav-text-col);*/
+/*    font-size: 15px;*/
+/*    padding-top: 3px;*/
+/*    margin-bottom: 0;*/
+/*}*/
+
+/*.content-menu ul li h6, .content-search .search-results li h6 {*/
+/*    font-size: 15px;*/
+/*    color: var(--nav-text-col);*/
+/*    font-weight: 400;*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*.content-menu ul li span, .content-search .search-results li span {*/
+/*    color: var(--page-span-text-col);*/
+/*    font-size: 15px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.rez {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+
+/*.item-search {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    margin: 15px;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.item-search span {*/
+/*    display: list-item; !* This has to be "list-item"                                               *!*/
+/*    list-style-type: square; !* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     *!*/
+/*    list-style-position: inside; !* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position *!*/
+/*    color: var(--nav-text-col);*/
+/*}*/
+
+/*.item-search > * {*/
+/*    color: var(--nav-text-col);*/
+/*}*/
+
+/*.item-search > div {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.content-menu .submenu {*/
+/*    display: inline-flex;*/
+/*    flex-direction: column;*/
+/*    list-style: none;*/
+/*    padding-left: 20px;*/
+/*    border-left: 1px solid #3a3c3d;*/
+/*}*/
+
+/*.content-menu .submenu li {*/
+/*    margin-bottom: 5px;*/
+/*    border-bottom: none;*/
+/*}*/
+
+/*.content-menu .submenu li h4 a, .content-search .search-results li h4 a {*/
+/*    color: var(--nav-text-col);*/
+/*}*/
+
+/*.content-menu .text-button:hover, .content-search .search-results li h4 a:hover {*/
+/*    font-weight: 600;*/
+/*    color: var(--nav-hov-text-col);*/
+/*    font-size: 15px;*/
+/*}*/
+
+/*.content-menu .text-button, .content-search .search-results .text-button {*/
+/*    font-weight: 600;*/
+/*    color: var(--nav-text-col);*/
+/*    font-size: 15px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.content-section {*/
+/*    background-color: var(--nav-bg);*/
+/*    border-radius: 23px;*/
+/*    padding: 30px;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.content-section .heading-section h4 em {*/
+/*    color: var(--page-text-col);*/
+/*}*/
+
+/*.token.operator {*/
+/*    background: transparent !important;*/
+/*}*/
