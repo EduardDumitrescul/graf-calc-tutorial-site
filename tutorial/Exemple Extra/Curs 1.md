@@ -5,32 +5,32 @@
 ## Pentru a rula template-ul
 - se include header-ul *square-app.h* la inceputul fisierului *main.cpp*:
 
-```include "fmi/01-01-square/square-app.h"```
+`include "fmi/01-01-square/square-app.h"`
 - se obtine o instanta a clasei *SquareApp* si se ruleaza:
 
-```SquareApp::getInstance()->run(argc, argv);```
+`SquareApp::getInstance()->run(argc, argv);`
 
 
 ## Unde se gasesc fisierele
 - header:
-    - in ```include/fmi/{nume_folder}/{nume_fisier.h}```
-    - se include in alte fisiere cu ```#include "fmi/{nume_folder}/{nume_fisier.h}"```
+    - in `include/fmi/{nume_folder}/{nume_fisier.h}`
+    - se include in alte fisiere cu `#include "fmi/{nume_folder}/{nume_fisier.h}"`
 - sursa:
-    - in ```src/fmi/{nume_folder}/{nume_fisier.cpp}```
-    - se include in alte fisiere cu ```#include "fmi/{nume_folder}/{nume_fisier.h}"```
+    - in `src/fmi/{nume_folder}/{nume_fisier.cpp}`
+    - se include in alte fisiere cu `#include "fmi/{nume_folder}/{nume_fisier.h}"`
 - shader:
-    - in ```shaders/{nume_folder}/{nume_fisier.vert/.frag}```
+    - in `shaders/{nume_folder}/{nume_fisier.vert/.frag}`
 - textura:
-    - in ```textures/{nume_folder}/{nume_fisier}```
+    - in `textures/{nume_folder}/{nume_fisier}`
 
 ## Cum se creeaza o noua aplicatie
 - se creeaza un fisier header (.h) nou cu definitia clasei
 - eventual se adauga shadere sau texturi
 - se adauga implementarea intr-un fisier sursa (.cpp)
-    - trebuie sa contina la inceput ```include "{clasa}.h"```
+    - trebuie sa contina la inceput `include "{clasa}.h"`
 - in main.cpp, se obtine o instanta a clasei si se ruleaza
-```Clasa::getInstance()->run(argc, argv);```
-    - trebuie sa contina la inceput ```include "{clasa}.h"```
+`Clasa::getInstance()->run(argc, argv);`
+    - trebuie sa contina la inceput `include "{clasa}.h"`
 
 
 ## Alte informatii
@@ -47,7 +47,7 @@ Functia care are ca scop crearea de shadere, texturi si obiecte.
 
 - **render()**
 
-Este functia care se ocupa de desenarea pe ecran. Poate apela si functi de desenare ale unor obiecte (ex: Square)
+Este functia care se ocupa de desenarea pe ecran. Poate apela si functia de desenare ale unor obiecte (ex: Square)
 
 - **cleanup()**
 
