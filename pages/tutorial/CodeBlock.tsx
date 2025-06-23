@@ -1,4 +1,5 @@
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
+import {useTheme} from "@mui/material/styles";
 
 export default function CodeBlock(props: any) {
     const theme = useTheme();
@@ -16,28 +17,16 @@ export default function CodeBlock(props: any) {
     const isCpp = language.includes("cpp");
 
     const bgColor = isShader
-        ? isDark
-            ? "rgba(15, 26, 44, 0.7)"
-            : "rgba(230, 245, 255, 0.6)"
+        ? theme.palette.custom.shader.bg
         : isCpp
-            ? isDark
-                ? "rgba(30, 30, 30, 0.7)"
-                : "rgba(240, 255, 240, 0.6)"
-            : isDark
-                ? "rgba(40, 40, 40, 0.5)"
-                : "rgba(250, 250, 250, 0.6)";
+            ? theme.palette.custom.cpp.bg
+            : theme.palette.custom.default.bg;
 
     const borderColor = isShader
-        ? isDark
-            ? "rgba(0, 100, 200, 0.4)"
-            : "rgba(100, 180, 255, 0.5)"
+        ? theme.palette.custom.shader.border
         : isCpp
-            ? isDark
-                ? "rgba(100, 120, 150, 0.4)"
-                : "rgba(80, 200, 120, 0.5)"
-            : isDark
-                ? "rgba(255, 255, 255, 0.1)"
-                : "rgba(0, 0, 0, 0.1)";
+            ? theme.palette.custom.cpp.border
+            : theme.palette.custom.default.border;
 
     return (
         <Box

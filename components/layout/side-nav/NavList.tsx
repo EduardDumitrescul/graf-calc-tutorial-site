@@ -25,10 +25,11 @@ export default function NavList({ items, parentPath, level, expandedFolders, tog
         <List disablePadding>
             {Object.entries(items).map(([name, value]) => {
                 const currentPath = parentPath ? `${parentPath}/${name}` : name;
+                const nameWithoutPrefix = name.substring(3)
 
                 if (typeof value === 'object' && value.path) {
                     return (
-                        <NavItemLink key={value.path} name={name} path={value.path} level={level} />
+                        <NavItemLink key={value.path} name={nameWithoutPrefix} path={value.path} level={level} />
                     );
                 }
 
@@ -38,7 +39,7 @@ export default function NavList({ items, parentPath, level, expandedFolders, tog
                     return (
                         <NavItemFolder
                             key={currentPath}
-                            name={name}
+                            name={nameWithoutPrefix}
                             level={level}
                             isExpanded={isExpanded}
                             toggle={() => toggleFolder(currentPath)}

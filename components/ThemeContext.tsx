@@ -4,9 +4,37 @@
  * The theme preference is stored in localStorage and persists across sessions.
  */
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { ThemeProvider as MUIThemeProvider, createTheme, PaletteMode } from '@mui/material/styles';
+import React, {
+    createContext,
+    useContext,
+    useState,
+    useEffect,
+    ReactNode,
+} from 'react';
+import {
+    ThemeProvider as MUIThemeProvider,
+    createTheme,
+    PaletteMode,
+} from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
+
+declare module '@mui/material/styles' {
+    interface Palette {
+        custom: {
+            shader: { bg: string; border: string };
+            cpp: { bg: string; border: string };
+            default: { bg: string; border: string };
+        };
+    }
+
+    interface PaletteOptions {
+        custom?: {
+            shader?: { bg: string; border: string };
+            cpp?: { bg: string; border: string };
+            default?: { bg: string; border: string };
+        };
+    }
+}
 
 interface ThemeContextType {
     theme: PaletteMode;
@@ -20,11 +48,13 @@ const defaultContextValue: ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 
-export const useTheme = () => {
-    return useContext(ThemeContext);
-};
+export const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider = ({ children }) => {
+interface ThemeProviderProps {
+    children: ReactNode;
+}
+
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     const [theme, setTheme] = useState<PaletteMode>('light');
     const [isThemeLoaded, setIsThemeLoaded] = useState(false);
 
@@ -57,6 +87,20 @@ export const ThemeProvider = ({ children }) => {
                         primary: '#1f1f1f',
                         secondary: '#555555',
                     },
+                    custom: {
+                        shader: {
+                            bg: 'rgba(230, 245, 255, 0.6)',
+                            border: 'rgba(100, 180, 255, 0.5)',
+                        },
+                        cpp: {
+                            bg: 'rgba(240, 255, 240, 0.6)',
+                            border: 'rgba(80, 200, 120, 0.5)',
+                        },
+                        default: {
+                            bg: 'rgba(250, 250, 250, 0.6)',
+                            border: 'rgba(0, 0, 0, 0.1)',
+                        },
+                    },
                 }
                 : {
                     background: {
@@ -66,6 +110,20 @@ export const ThemeProvider = ({ children }) => {
                     text: {
                         primary: '#e0e0e0',
                         secondary: '#a0a0a0',
+                    },
+                    custom: {
+                        shader: {
+                            bg: 'rgba(15, 26, 44, 0.7)',
+                            border: 'rgba(0, 100, 200, 0.4)',
+                        },
+                        cpp: {
+                            bg: 'rgba(30, 30, 30, 0.7)',
+                            border: 'rgba(100, 120, 150, 0.4)',
+                        },
+                        default: {
+                            bg: 'rgba(40, 40, 40, 0.5)',
+                            border: 'rgba(255, 255, 255, 0.1)',
+                        },
                     },
                 }),
         },
