@@ -31,7 +31,7 @@ const TutorialLink: React.FC<TutorialLinkProps> = ({ path, title }) => (
             }}
         >
             <Typography variant="body1" fontWeight={500}>
-                {title.substring(2)}
+                {title.substring(3)}
             </Typography>
             <ArrowForwardIosIcon sx={{ fontSize: 16, opacity: 0.6 }} />
         </MuiLink>

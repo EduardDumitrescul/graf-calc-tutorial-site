@@ -33,6 +33,9 @@ export default function NavList({ items, parentPath, level, expandedFolders, tog
                     );
                 }
 
+                console.log(expandedFolders)
+                console.log(currentPath)
+
                 if (typeof value === 'object') {
                     const isExpanded = expandedFolders[currentPath] || false;
 
