@@ -55,12 +55,12 @@ const ResultCard: React.FC<ResultCardProps> = ({ state }) => {
                         color="primary"
                         sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                     >
-                        {state.title}
+                        {state.title.substring(3)}
                     </Typography>
                 }
                 subheader={folderName && (
                     <Typography variant="body2" color="text.secondary">
-                        {folderName}
+                        {folderName.substring(3)}
                     </Typography>
                 )}
             />
